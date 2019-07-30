@@ -1,0 +1,27 @@
+---
+title: "R_study"
+author: "Heum"
+date: "2019년 7월 31일"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+> ebuil YuoTube(https://www.youtube.com/channel/UCJ49UIzNXAaxZdDNYFxNhsA/featured) study
+
+***
++ 2019. 7. 31. 
+
+### base::barplot
+
+  - 일변량 질적 자료 분석을 위한 barplot
+  - ggplot2::diamond 활용
+```{r packages, include=FALSE}
+library(tidyverse)
+```
+
+```{r}
+
+
+```
