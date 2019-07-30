@@ -5,9 +5,7 @@ date: "2019년 7월 31일"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 > ebuil YuoTube(https://www.youtube.com/channel/UCJ49UIzNXAaxZdDNYFxNhsA/featured) study
 
 ***
@@ -19,23 +17,45 @@ knitr::opts_chunk$set(echo = TRUE)
 
   - 일변량 질적 자료 분석을 위한 barplot
   - using 'ggplot2::diamonds' DataSet
-```{r packages, include=FALSE}
-library(tidyverse)
-```
-```{r}
+
+
+```r
 head(diamonds, 3)
+```
+
+```
+## # A tibble: 3 x 10
+##   carat cut     color clarity depth table price     x     y     z
+##   <dbl> <ord>   <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
+## 1  0.23 Ideal   E     SI2      61.5    55   326  3.95  3.98  2.43
+## 2  0.21 Premium E     SI1      59.8    61   326  3.89  3.84  2.31
+## 3  0.23 Good    E     VS1      56.9    65   327  4.05  4.07  2.31
+```
+
+```r
 table(diamonds$cut)
 ```
 
-```{r}
-barplot(table(diamonds$cut))  # 빈도 확인 
-
 ```
+## 
+##      Fair      Good Very Good   Premium     Ideal 
+##      1610      4906     12082     13791     21551
+```
+
+
+```r
+barplot(table(diamonds$cut))  # 빈도 확인 
+```
+
+![plot of chunk unnamed-chunk-42](figure/unnamed-chunk-42-1.png)
 
   - 내림차순 sort/decreasing
-```{r}
+
+```r
 barplot(sort(table(diamonds$cut), decreasing = T))
 ```
+
+![plot of chunk unnamed-chunk-43](figure/unnamed-chunk-43-1.png)
   
 ### barplot arguments
   
@@ -46,7 +66,8 @@ barplot(sort(table(diamonds$cut), decreasing = T))
     - ylim  = c(min, max)    y축의 범위
     - horiz = TRUE
 
-```{r}
+
+```r
 barplot(sort(table(diamonds$cut), decreasing = T), 
         col = "purple", 
         main = "Cut of Diamonds", 
@@ -55,14 +76,20 @@ barplot(sort(table(diamonds$cut), decreasing = T),
         ylim = c(0, 25000))
 ```
 
+![plot of chunk unnamed-chunk-44](figure/unnamed-chunk-44-1.png)
+
   - RColorBrewer 를 이용한 다양한 색깔이용
-```{r}
+
+```r
 library(RColorBrewer)
 display.brewer.all(type = "seq")
 ```
 
+![plot of chunk unnamed-chunk-45](figure/unnamed-chunk-45-1.png)
 
-```{r}
+
+
+```r
 color.palette <- RColorBrewer::brewer.pal(n = 5, name = "Blues")
 
 barplot(sort(table(diamonds$cut), decreasing = T), 
@@ -72,9 +99,12 @@ barplot(sort(table(diamonds$cut), decreasing = T),
         xlab = "cut", 
         ylim = c(0, 25000))
 ```
+
+![plot of chunk unnamed-chunk-46](figure/unnamed-chunk-46-1.png)
   
   - horiz = TRUE  막대의 방향 변경
-```{r}
+
+```r
 barplot(sort(table(diamonds$cut), decreasing = F), 
         col   = sort(color.palette, decreasing = T),
         main  = "Cut of Diamonds", 
@@ -83,5 +113,7 @@ barplot(sort(table(diamonds$cut), decreasing = F),
         xlim  = c(0, 25000),       # horiz에 맞추어 변경 
         horiz = TRUE)
 ```
+
+![plot of chunk unnamed-chunk-47](figure/unnamed-chunk-47-1.png)
   
   
