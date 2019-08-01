@@ -1,7 +1,7 @@
 ---
 title: "R_study"
 author: "Heum"
-date: "2019년 7월 31일"
+Start Date: "2019년 7월 31일"
 output: html_document
 ---
 
@@ -39,12 +39,12 @@ barplot(sort(table(diamonds$cut), decreasing = T))
   
 ### barplot arguments
   
-    - col   = "color"        막대의 색깔
-    - main  = "title"        차트 제목
-    - ylab  = "y axis name"  y축 라벨
-    - xlab  = "x axis name"  x축 라벨 
-    - ylim  = c(min, max)    y축의 범위
-    - horiz = TRUE
+    - col   = "color"         막대의 색깔
+    - main  = "title"         차트 제목
+    - ylab  = "y axis name"   y축 라벨
+    - xlab  = "x axis name"   x축 라벨 
+    - ylim  = c(min, max)     y축의 범위
+    - horiz = TRUE            축 방향 설정 
 
 ```{r}
 barplot(sort(table(diamonds$cut), decreasing = T), 
