@@ -6,7 +6,7 @@ output: html_document
 ---
 
 
-> ebuil YuoTube(https://www.youtube.com/channel/UCJ49UIzNXAaxZdDNYFxNhsA/featured) study
+> ebuil YouTube(https://www.youtube.com/channel/UCJ49UIzNXAaxZdDNYFxNhsA/featured) study
 
 ***
 -- 2019. 7. 31. 
