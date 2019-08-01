@@ -1,7 +1,7 @@
 ---
 title: "R_study"
 author: "Heum"
-date: "2019년 7월 31일"
+Start Date: "2019년 7월 31일"
 output: html_document
 ---
 
@@ -47,7 +47,7 @@ table(diamonds$cut)
 barplot(table(diamonds$cut))  # 빈도 확인 
 ```
 
-![plot of chunk unnamed-chunk-42](figure/unnamed-chunk-42-1.png)
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
   - 내림차순 sort/decreasing
 
@@ -55,16 +55,16 @@ barplot(table(diamonds$cut))  # 빈도 확인
 barplot(sort(table(diamonds$cut), decreasing = T))
 ```
 
-![plot of chunk unnamed-chunk-43](figure/unnamed-chunk-43-1.png)
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
   
 ### barplot arguments
   
-    - col   = "color"        막대의 색깔
-    - main  = "title"        차트 제목
-    - ylab  = "y axis name"  y축 라벨
-    - xlab  = "x axis name"  x축 라벨 
-    - ylim  = c(min, max)    y축의 범위
-    - horiz = TRUE
+    - col   = "color"         막대의 색깔
+    - main  = "title"         차트 제목
+    - ylab  = "y axis name"   y축 라벨
+    - xlab  = "x axis name"   x축 라벨 
+    - ylim  = c(min, max)     y축의 범위
+    - horiz = TRUE            축 방향 설정 
 
 
 ```r
@@ -76,7 +76,7 @@ barplot(sort(table(diamonds$cut), decreasing = T),
         ylim = c(0, 25000))
 ```
 
-![plot of chunk unnamed-chunk-44](figure/unnamed-chunk-44-1.png)
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
 
   - RColorBrewer 를 이용한 다양한 색깔이용
 
@@ -85,7 +85,7 @@ library(RColorBrewer)
 display.brewer.all(type = "seq")
 ```
 
-![plot of chunk unnamed-chunk-45](figure/unnamed-chunk-45-1.png)
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
 
 
 
@@ -100,7 +100,7 @@ barplot(sort(table(diamonds$cut), decreasing = T),
         ylim = c(0, 25000))
 ```
 
-![plot of chunk unnamed-chunk-46](figure/unnamed-chunk-46-1.png)
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
   
   - horiz = TRUE  막대의 방향 변경
 
@@ -114,6 +114,6 @@ barplot(sort(table(diamonds$cut), decreasing = F),
         horiz = TRUE)
 ```
 
-![plot of chunk unnamed-chunk-47](figure/unnamed-chunk-47-1.png)
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png)
   
   

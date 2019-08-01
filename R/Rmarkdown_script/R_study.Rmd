@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
-### base::barplot
+### >> base::barplot
 
   - 일변량 질적 자료 분석을 위한 barplot
   - using 'ggplot2::diamonds' DataSet
