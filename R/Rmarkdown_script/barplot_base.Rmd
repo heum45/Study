@@ -1,0 +1,87 @@
+---
+title: "R_study"
+author: "Heum"
+Start Date: "2019년 7월 31일"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+> ebuil YouTube(https://www.youtube.com/channel/UCJ49UIzNXAaxZdDNYFxNhsA/featured) study
+
+***
+-- 2019. 7. 31. 
+
+***
+
+### >> base::barplot
+
+  - 일변량 질적 자료 분석을 위한 barplot
+  - using 'ggplot2::diamonds' DataSet
+```{r packages, include=FALSE}
+library(tidyverse)
+```
+```{r}
+head(diamonds, 3)
+table(diamonds$cut)
+```
+
+```{r}
+barplot(table(diamonds$cut))  # 빈도 확인 
+
+```
+
+  - 내림차순 sort/decreasing
+```{r}
+barplot(sort(table(diamonds$cut), decreasing = T))
+```
+  
+### barplot arguments
+  
+    - col   = "color"         막대의 색깔
+    - main  = "title"         차트 제목
+    - ylab  = "y axis name"   y축 라벨
+    - xlab  = "x axis name"   x축 라벨 
+    - ylim  = c(min, max)     y축의 범위
+    - horiz = TRUE            축 방향 설정 
+
+```{r}
+barplot(sort(table(diamonds$cut), decreasing = T), 
+        col = "purple", 
+        main = "Cut of Diamonds", 
+        ylab = "Frequency", 
+        xlab = "cut", 
+        ylim = c(0, 25000))
+```
+
+  - RColorBrewer 를 이용한 다양한 색깔이용
+```{r}
+library(RColorBrewer)
+display.brewer.all(type = "seq")
+```
+
+
+```{r}
+color.palette <- RColorBrewer::brewer.pal(n = 5, name = "Blues")
+
+barplot(sort(table(diamonds$cut), decreasing = T), 
+        col  = sort(color.palette, decreasing = F), 
+        main = "Cut of Diamonds", 
+        ylab = "Frequency", 
+        xlab = "cut", 
+        ylim = c(0, 25000))
+```
+  
+  - horiz = TRUE  막대의 방향 변경
+```{r}
+barplot(sort(table(diamonds$cut), decreasing = F), 
+        col   = sort(color.palette, decreasing = T),
+        main  = "Cut of Diamonds", 
+        ylab  = "Frequency", 
+        xlab  = "cut", 
+        xlim  = c(0, 25000),       # horiz에 맞추어 변경 
+        horiz = TRUE)
+```
+  
+  
