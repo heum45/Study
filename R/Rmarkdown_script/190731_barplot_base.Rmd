@@ -1,5 +1,5 @@
 ---
-title: "R_study"
+title: "barplot_base"
 author: "Heum"
 Start Date: "2019년 7월 31일"
 output: html_document
