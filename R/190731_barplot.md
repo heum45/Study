@@ -1,8 +1,8 @@
 ---
 title: "barplot_base"
 author: "Heum"
-Start Date: "2019년 7월 31일"
-output: html_document
+Start Date: "2019년 7년 31일"
+html_document: default
 ---
 
 
@@ -13,12 +13,16 @@ output: html_document
 
 ***
 
-### [ base::barplot ] 
+  - 일변량 질적 자료 분석
+
+### [ base::barplot() ] 
 #### https://youtu.be/5NcNe4CXInY
 
-  - 일변량 질적 자료 분석을 위한 barplot
-  - using 'ggplot2::diamonds' DataSet
 
+
+```r
+library(tidyverse)
+```
 
 ```r
 head(diamonds, 3)
@@ -48,7 +52,7 @@ table(diamonds$cut)
 barplot(table(diamonds$cut))  # 빈도 확인 
 ```
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
+![plot of chunk unnamed-chunk-26](figure/unnamed-chunk-26-1.png)
 
   - 내림차순 sort/decreasing
 
@@ -56,9 +60,9 @@ barplot(table(diamonds$cut))  # 빈도 확인
 barplot(sort(table(diamonds$cut), decreasing = T))
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
+![plot of chunk unnamed-chunk-27](figure/unnamed-chunk-27-1.png)
   
-### barplot arguments
+### barplot() arguments
   
     - col   = "color"         막대의 색깔
     - main  = "title"         차트 제목
@@ -78,7 +82,7 @@ barplot(sort(table(diamonds$cut), decreasing = T),
         ylim = c(0, 25000))
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
+![plot of chunk unnamed-chunk-28](figure/unnamed-chunk-28-1.png)
 
   - RColorBrewer 를 이용한 다양한 색깔이용
 
@@ -87,7 +91,7 @@ library(RColorBrewer)
 display.brewer.all(type = "seq")
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
+![plot of chunk unnamed-chunk-29](figure/unnamed-chunk-29-1.png)
 
 
 
@@ -102,7 +106,7 @@ barplot(sort(table(diamonds$cut), decreasing = T),
         ylim = c(0, 25000))
 ```
 
-![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
+![plot of chunk unnamed-chunk-30](figure/unnamed-chunk-30-1.png)
   
   - horiz = TRUE  막대의 방향 변경
 
@@ -116,6 +120,49 @@ barplot(sort(table(diamonds$cut), decreasing = F),
         horiz = TRUE)
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png)
+![plot of chunk unnamed-chunk-31](figure/unnamed-chunk-31-1.png)
   
   
+### [ ggplot::geom_bar() ] 
+#### https://youtu.be/EubwjZfH3lU
+
+### geom_bar() arguments
+  
+    - fill  = "color"         막대의 색깔
+
+ - 막대의 색깔지정 방법(1)
+ 
+
+```r
+ggplot(data = diamonds, mapping = aes(x = cut)) +
+  geom_bar(fill = RColorBrewer::brewer.pal(n = 5, name = "Blues"))
+```
+
+![plot of chunk unnamed-chunk-32](figure/unnamed-chunk-32-1.png)
+    
+ - 막대의 색깔지정 방법(2): 범주에 따른 색깔 
+ 
+
+```r
+ggplot(data = diamonds, mapping = aes(x = cut, fill = cut)) +
+  geom_bar()
+```
+
+![plot of chunk unnamed-chunk-33](figure/unnamed-chunk-33-1.png)
+
+
+
+```r
+ggplot(data = diamonds, mapping = aes(x = cut, fill = cut)) +
+  geom_bar() +
+  theme_classic() +
+  labs(title = "Cut of Diamonds", 
+       x     = "Cut", 
+       y     = "Frequency")+
+  theme(plot.title = element_text(size = 20, color = "red", face = "bold"), 
+        axis.title.x = element_text(size = 15, color = "blue", face = "italic"), 
+        axis.title.y = element_text(size = 15, color = "purple", face = "bold.italic", angle = 270))
+```
+
+![plot of chunk unnamed-chunk-34](figure/unnamed-chunk-34-1.png)
+

@@ -1,0 +1,48 @@
+---
+title: "ggplot2"
+author: "Heum"
+date: "2019년 8월 5일"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(tidyverse)
+```
+
+### ggplot2 arguments
+
+> theme 
+
+ - default
+```{r}
+ggplot(data = diamonds, mapping = aes(x = cut)) 
+```
+
+ - theme_bw()
+```{r}
+ggplot(data = diamonds, mapping = aes(x = cut)) +
+  theme_bw()
+```
+
+ - theme_classic()
+```{r}
+ggplot(data = diamonds, mapping = aes(x = cut)) +
+  theme_classic()
+```
+
+ - theme_linedraw()
+```{r}
+ggplot(data = diamonds, mapping = aes(x = cut)) +
+  theme_linedraw()
+```
+
+
+ - theme_dark()
+```{r}
+ggplot(data = diamonds, mapping = aes(x = cut)) +
+  theme_dark()
+```
+

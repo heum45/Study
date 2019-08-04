@@ -1,0 +1,56 @@
+---
+title: "histogram"
+author: "Heum"
+Start Date: "2019년 8월 4일"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+> ebuil YouTube(https://www.youtube.com/channel/UCJ49UIzNXAaxZdDNYFxNhsA/featured) study
+
+***
+-- 2019. 8. 4. 
+
+***
+  - 일변량 질적 자료 분석
+  - using 'ggplot2::diamonds' DataSet
+
+### [ ggplot2::geom_histogram ] 
+#### https://youtu.be/nhNMoS6Xf_s
+
+```{r packages, include=FALSE}
+library(tidyverse)
+```
+```{r}
+head(diamonds, 3)
+```
+
+### geom_histogram() arguments
+
+    - binwidth = 각 구간의 폭(너비)
+    - bins     = 구간의 개수 
+    - facet_wrap = 범주(집단)별 그래프 
+
+```{r}
+ggplot(data = diamonds, mapping = aes(x = price)) +
+  geom_histogram(binwidth = 1000) # 구간의 폭(너비)
+```
+
+```{r}
+ggplot(data = diamonds, mapping = aes(x = price)) +
+  geom_histogram(bins = 10) # 구간의 개수 
+```
+
+```{r}
+ggplot(data = diamonds, mapping = aes(x = price)) +
+  geom_histogram(bins = 10) +
+  facet_wrap( ~ cut)
+```
+
+```{r}
+ggplot(data = diamonds, mapping = aes(x = price)) +
+  geom_histogram(bins = 10) +
+  facet_wrap( ~ cut + color)
+```
