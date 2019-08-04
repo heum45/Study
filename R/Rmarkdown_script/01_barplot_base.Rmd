@@ -15,7 +15,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
-### >> base::barplot
+### [ base::barplot ] 
+#### https://youtu.be/5NcNe4CXInY
 
   - 일변량 질적 자료 분석을 위한 barplot
   - using 'ggplot2::diamonds' DataSet
@@ -44,6 +45,7 @@ barplot(sort(table(diamonds$cut), decreasing = T))
     - ylab  = "y axis name"   y축 라벨
     - xlab  = "x axis name"   x축 라벨 
     - ylim  = c(min, max)     y축의 범위
+    - xlim  = c(min, max)     x축의 범위 
     - horiz = TRUE            축 방향 설정 
 
 ```{r}
