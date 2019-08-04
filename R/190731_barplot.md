@@ -52,7 +52,7 @@ table(diamonds$cut)
 barplot(table(diamonds$cut))  # 빈도 확인 
 ```
 
-![plot of chunk unnamed-chunk-26](figure/unnamed-chunk-26-1.png)
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
 
   - 내림차순 sort/decreasing
 
@@ -60,7 +60,7 @@ barplot(table(diamonds$cut))  # 빈도 확인
 barplot(sort(table(diamonds$cut), decreasing = T))
 ```
 
-![plot of chunk unnamed-chunk-27](figure/unnamed-chunk-27-1.png)
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
   
 ### barplot() arguments
   
@@ -82,7 +82,7 @@ barplot(sort(table(diamonds$cut), decreasing = T),
         ylim = c(0, 25000))
 ```
 
-![plot of chunk unnamed-chunk-28](figure/unnamed-chunk-28-1.png)
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png)
 
   - RColorBrewer 를 이용한 다양한 색깔이용
 
@@ -91,7 +91,7 @@ library(RColorBrewer)
 display.brewer.all(type = "seq")
 ```
 
-![plot of chunk unnamed-chunk-29](figure/unnamed-chunk-29-1.png)
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png)
 
 
 
@@ -106,7 +106,7 @@ barplot(sort(table(diamonds$cut), decreasing = T),
         ylim = c(0, 25000))
 ```
 
-![plot of chunk unnamed-chunk-30](figure/unnamed-chunk-30-1.png)
+![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png)
   
   - horiz = TRUE  막대의 방향 변경
 
@@ -120,7 +120,7 @@ barplot(sort(table(diamonds$cut), decreasing = F),
         horiz = TRUE)
 ```
 
-![plot of chunk unnamed-chunk-31](figure/unnamed-chunk-31-1.png)
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png)
   
   
 ### [ ggplot::geom_bar() ] 
@@ -138,7 +138,7 @@ ggplot(data = diamonds, mapping = aes(x = cut)) +
   geom_bar(fill = RColorBrewer::brewer.pal(n = 5, name = "Blues"))
 ```
 
-![plot of chunk unnamed-chunk-32](figure/unnamed-chunk-32-1.png)
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png)
     
  - 막대의 색깔지정 방법(2): 범주에 따른 색깔 
  
@@ -148,9 +148,9 @@ ggplot(data = diamonds, mapping = aes(x = cut, fill = cut)) +
   geom_bar()
 ```
 
-![plot of chunk unnamed-chunk-33](figure/unnamed-chunk-33-1.png)
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png)
 
-
+ - ggplot의 그래프 (레이어) 추가 설정
 
 ```r
 ggplot(data = diamonds, mapping = aes(x = cut, fill = cut)) +
@@ -164,5 +164,5 @@ ggplot(data = diamonds, mapping = aes(x = cut, fill = cut)) +
         axis.title.y = element_text(size = 15, color = "purple", face = "bold.italic", angle = 270))
 ```
 
-![plot of chunk unnamed-chunk-34](figure/unnamed-chunk-34-1.png)
+![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png)
 

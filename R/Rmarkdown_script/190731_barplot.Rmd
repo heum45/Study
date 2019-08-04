@@ -109,7 +109,7 @@ ggplot(data = diamonds, mapping = aes(x = cut, fill = cut)) +
   geom_bar()
 ```
 
-
+ - ggplot의 그래프 (레이어) 추가 설정
 ```{r}
 ggplot(data = diamonds, mapping = aes(x = cut, fill = cut)) +
   geom_bar() +
